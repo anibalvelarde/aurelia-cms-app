@@ -1,0 +1,101 @@
+{
+  "name": "aurelia-cms-app",
+  "type": "project:application",
+  "bundler": {
+    "id": "webpack",
+    "displayName": "Webpack"
+  },
+  "build": {
+    "options": {
+      "server": "dev",
+      "extractCss": "prod",
+      "coverage": false
+    },
+    "bundles": [
+      {
+        "name": "app-bundle.js",
+        "source": [
+          "[**/*.js]",
+          "**/*.{css,html}"
+        ]
+      },
+      {
+        "name": "vendor-bundle.js",
+        "prepend": [ ],
+        "dependencies": [
+          "jquery",
+          {
+            "name": "bootstrap",
+            "path": "../node_modules/bootstrap/dist",
+            "main": "js/bootstrap.bundle.min",
+            "deps": [
+              "jquery"
+            ],
+            "exports": "$",
+            "resources": [
+              "css/bootstrap.css"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "platform": {
+    "id": "web",
+    "displayName": "Web",
+    "hmr": false,
+    "open": false,
+    "port": 8080,
+    "output": "dist"
+  },
+  "loader": {
+    "id": "none",
+    "displayName": "None"
+  },
+  "transpiler": {
+    "id": "typescript",
+    "displayName": "TypeScript",
+    "fileExtension": ".ts"
+  },
+  "markupProcessor": {
+    "id": "minimum",
+    "displayName": "Minimal Minification",
+    "fileExtension": ".html"
+  },
+  "cssProcessor": {
+    "id": "none",
+    "displayName": "None",
+    "fileExtension": ".css"
+  },
+  "editor": {
+    "id": "vscode",
+    "displayName": "Visual Studio Code"
+  },
+  "unitTestRunners": [
+    {
+      "id": "jest",
+      "displayName": "Jest"
+    },
+    {
+      "id": "karma",
+      "displayName": "Karma"
+    }
+  ],
+  "integrationTestRunner": {
+    "id": "none",
+    "displayName": "None"
+  },
+  "paths": {
+    "root": "src",
+    "resources": "resources",
+    "elements": "resources/elements",
+    "attributes": "resources/attributes",
+    "valueConverters": "resources/value-converters",
+    "bindingBehaviors": "resources/binding-behaviors"
+  },
+  "testFramework": {
+    "id": "jasmine",
+    "displayName": "Jasmine"
+  },
+  "packageManager": "npm"
+}

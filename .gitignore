@@ -23,8 +23,6 @@ Thumbs.db
 # Dependencies
 node_modules
 dist
-test
-aurelia_project
 
 # Compiled files
 /scripts
